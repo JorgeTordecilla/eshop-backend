@@ -7,6 +7,7 @@ const authJwt = require("./helpers/jwt");
 const errorHandler = require("./helpers/error-handler");
 const api = process.env.API_URL;
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.options("*", cors());
@@ -40,7 +41,7 @@ mongoose
     console.log(err);
   });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(api);
   console.log("http://127.0.0.1:3000" + api);
 });
